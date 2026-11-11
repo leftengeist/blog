@@ -1,5 +1,5 @@
 Hello World: Testing Pelican Locally
-==================================
+====================================
 
 :Title: Hello World: Testing Pelican Locally
 :Date: 2026-11-11 12:00

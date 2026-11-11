@@ -3,7 +3,8 @@
 
 # Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
 _/
-.vscode/
-.venv/
-venv/
-output/
+.vscode
+.venv
+venv
+output
+__pycache__
