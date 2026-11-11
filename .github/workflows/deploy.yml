@@ -25,9 +25,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Checkout Flex Theme
+        run: git clone https://github.com/alexandrevicenzi/flex.git themes/flex
+      
       - name: Build Static Site with Pelican
-        run: |
-          pelican content -s publishconf.py
+        run: pelican content -s publishconf.py
 
       - name: Deploy to github-pages Branch
         uses: peaceiris/actions-gh-pages@v4
