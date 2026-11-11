@@ -1,4 +1,5 @@
 # pelicanconf.py
+THEME = 'themes/flex'
 AUTHOR = 'Admin'
 SITENAME = 'My Test Blog'
 SITEURL = 'https://www.leftengeist.xyz'
