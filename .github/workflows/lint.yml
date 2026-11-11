@@ -1,0 +1,45 @@
+name: Lint Pelican Content and Workflows
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-rst:
+    name: Lint reStructuredText Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Docutils
+        run: |
+          python -m pip install --upgrade pip
+          pip install docutils
+
+      - name: Validate rst Files
+        run: |
+          # Recursively find and lint all .rst files
+          for file in $(find content -name "*.rst"); do
+            echo "Linting $file..."
+            rst2html.py --halt=warning "$file" /dev/null
+          done
+
+  lint-workflows:
+    name: Lint GitHub Actions Workflows
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Repository
+        uses: actions/checkout@v4
+
+      - name: Run actionlint
+        uses: rhysd/actionlint-action@v3
