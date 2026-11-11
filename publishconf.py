@@ -1,30 +1,18 @@
+# publishconf.py
 import os
 import sys
 
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-AUTHOR = 'Admin'
-SITENAME = 'My Test Blog'
+# If your blog is hosted at the root of your custom domain:
 SITEURL = 'https://www.leftengeist.xyz'
+RELATIVE_URLS = False
 
-PATH = 'content'
+DELETE_OUTPUT_DIRECTORY = True
 
-TIMEZONE = 'UTC'
+# Following items are usually configured for production feeds
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 
-DEFAULT_LANG = 'en'
-
-# Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
-
-# Blogroll / Links
-LINKS = (
-    ('Pelican', 'https://getpelican.com/'),
-    ('Python.org', 'https://www.python.org/'),
-)
-
-DEFAULT_PAGINATION = 5
+DELETE_OUTPUT_DIRECTORY = True
