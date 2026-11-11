@@ -28,10 +28,9 @@ jobs:
 
       - name: Validate rst Files
         run: |
-          # Use -print0 and while-read to safely handle filenames with spaces/special characters
           find content -name "*.rst" -print0 | while IFS= read -r -d '' file; do
             echo "Linting $file..."
-            rst2html.py --halt=warning "$file" /dev/null
+            python -m docutils.core --halt=warning "$file" /dev/null
           done
 
   lint-workflows:
@@ -43,4 +42,3 @@ jobs:
 
       - name: Run actionlint
         uses: raven-actions/actionlint@v2
-        
