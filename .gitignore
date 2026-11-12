@@ -1,10 +1,12 @@
-# This .gitignore is appropriate for repositories deployed to GitHub Pages and using
-# a Gemfile as specified at https://github.com/github/pages-gem#conventional
+# This .gitignore is appropriate for pelican repositories deployed to GitHub Pages
 
-# Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
-_/
+# Ignore vscode directory
 .vscode
+
+# Ignore Python virtual environment
 .venv
 venv
-output
+
+# Ignore the output of Pelican
 __pycache__
+output
